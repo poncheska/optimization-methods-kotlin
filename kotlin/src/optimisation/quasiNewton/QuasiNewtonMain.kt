@@ -5,6 +5,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 
+private const val DELTA = 0.000001
 private const val EPS = 0.000001
 private const val INF = 100000.0
 
@@ -50,7 +51,7 @@ class QuasiNewtonMain {
         H1 = getNewH(H0,p1,p2,y1,y2,alpha,z1,z2)
 
 
-        while (Vertex.distance(v0, v1) > EPS) {
+        while (Vertex.distance(v0, v1) > DELTA) {
             println("V($iterCounter): ${v1.getString()}    alpha = $alpha")
             println(H0)
             H0 = H1
